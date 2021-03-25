@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구입날짜선택</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script>
+function proc1(){
+	today = new Date();
+	
+	//선택한 날짜 가져오기 - value 이용
+	seldate = document.getElementById('sel').value;
+	selday = new Date(seldate);
+	
+	times = today.getTime() - selday.getTime();
+	
+	times = times / 1000/ 60/ 60/ 24;
+	
+	result = document.getElementById('result1');
+	
+	res = "오늘 : "+today.toLocaleString()+"<br>";
+	res += "구입날짜 : "+selday.toLocaleString()+"<br>";
+	if (times>=7) {
+		res += "교환 또는 반품이 안됩니다."
+		
+	}else {
+		res += "교환 또는 반품이 가능합니다."
+	}
+	
+	result.innerHTML = res;
+	
+}
+
+</script>
+</head>
+<body>
+
+<pre>
+	선택한 날짜의 getTime
+	오늘의 getTime
+	times = 오늘의 getTime - 선택한 날짜의 getTime
+	times/1000 / 60 / 60 / 24;
+	times 값을 7보다 큰지 안 큰지 비교
+	
+</pre>
+
+구입날짜<input type="date" id="sel">
+<input type="button" id="btn1" value="확인" onclick="proc1()">
+<br>
+<div id="result1"></div>
+</body>
+</html>

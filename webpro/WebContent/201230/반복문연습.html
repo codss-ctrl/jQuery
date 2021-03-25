@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문 연습</title>
+<link rel="stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico"/> 
+<style type="text/css">
+
+
+
+</style>
+
+<script type="text/javascript">
+function proc1() {
+	sum = 0;
+	for (var i = 1; i <= 200; i++) {
+		if (i%2 != 0) continue;
+		sum += i;
+	}
+	var res = "1~200까지 짝수의 합=" +  sum + "<br>";
+	var result1 = document.querySelector("#result1"); //전역변수
+//	var result1 = document.querySelector("#result1");//지역변수
+	print(result1,res);
+	//전역변수일 때는 call하지 않아도 출력가능
+	//다른 곳에서도 공통장소에서 출력할 수 있게 변수 부여
+}
+// function pr(){
+// 	result1.innerHTML = res; 지역변수에서는 사용불가
+// }
+
+function proc2(){
+	
+	 sum =0; //덧셈 변수
+	 res = ""; //문자열 나열,결합 변수
+	
+	while (true) {
+		//입력 12 56
+		su = parseInt(prompt("정수입력"));
+		//비교 - break;
+		if (su == 0) 
+			break;
+		
+		//아니면 입력값 더하기 68
+		sum += su;
+		//입력한 값 나열 - 문자열로 결합 12 56
+		res += su + " ";
+	}
+	res += "<br> 합 = " + sum;
+	result2 = document.querySelector("#result2");
+	//출력
+	print(result2,res)
+}
+
+
+
+function proc3(){
+	sum = 0;
+	res = "";
+	for (var i = 1; i <=10;i++) {
+		for (var k = 1; k <= 10; k++) {
+			if ((i+k)%3!=0) continue;
+			sum += (i+k);
+			res += i + " " + k + ",";
+		}
+		res += "<br>"
+	}
+	
+	result = document.querySelector("#result3");
+	res += sum ;
+	print(result,res);
+}	
+function proc4(){
+	
+	res="";
+	for (var i = 1; i <= 100; i++) {
+		if(i % 2==0 && i % 3==0)
+			res += i + ",";
+	}
+	res += "<br>"
+	result = document.querySelector("#result4");
+	print(result,res);
+}
+ function proc5(){
+	//입력
+	sum =0;
+	res="";
+	su1 = parseInt(prompt("첫번째 수 입력","두 수 모두 0이면 종료"));
+	su2 = parseInt(prompt("두번째 수 입력","두 수 모두 0이면 종료"));
+ 	//비교
+ 	while (true) {
+ 		
+ 		if(su1!=0 && su2!=0) continue;// 두수 0일때 정지
+ 		
+ 			sum += (su1+su2);
+ 			if (sum>=100)
+ 			 	res = su1 +","+su2+"합 : "+sum;
+ 		 	
+ 		 		
+	}res = su1 +","+su2;
+ 	
+ 	//출력	
+ 	result5 = document.querySelector("#result5");
+ 	print(result,res);	
+	
+}
+	
+	
+
+function print(a, res) {
+ 	a.innerHTML = res ; 
+ 		
+ }
+
+
+</script>
+
+</head>
+
+<body>
+<pre>
+1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오.(continue를 이용)
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<div id="result1"></div>
+
+<pre>
+사용자가 입력한 값을 계속 더하고,
+ 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오.
+</pre>
+<input type="button" value="확인" onclick="proc2()">
+<div id="result2"></div>
+
+<pre>
+다중 for문을 이용해서 1~ 10 까지 중   
+      i와 k의 더한 합이 3의 배수일때만 출력 continue를 이용
+</pre>
+<input type="button" value="확인" onclick="proc3()">
+<div id="result3"></div>
+
+<pre>
+1~100 까지 중 2의 배수이면서 3의 배수인것만 출력 
+</pre>
+<input type="button" value="확인" onclick="proc4()">
+<div id="result4"></div>
+
+<pre>
+두 수를 입력(prompt) 두수의 합이 100이상일 때 입력받은 두수와 함께 출력, 
+두수의 합이 100미만일때 의 수는 별도로 다시 출력  
+
+     continue를 이용 , 두 수 모두 0 이 입력되면 종료 
+
+</pre>
+<input type="button" value="확인" onclick="proc5()">
+<div id="result5"></div>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

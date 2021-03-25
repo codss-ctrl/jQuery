@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>쇼핑카트페이지</title>
+<link rel="stylesheet" href="../css/website.css">
+<style>
+div{
+	margin-left: 20%;
+	margin-top: 5%;
+}
+table{
+		width: 70%;
+		heigh:30px;
+		text-align: center;
+		border: 2px solid purple;
+		padding: 10px;
+		
+}
+#t1{
+	width: 30%;
+ 
+}
+#t2{
+	width: 10%;
+	padding: 3px;
+}
+h2{
+	color: purple;
+}
+#number{
+		width:100px;
+}
+
+</style>
+</head>
+<body>
+<div>
+<h2>Shopping Cart</h2>
+<table border="1">
+	<tr>
+		<th>품목</th>
+		<th>가격</th>
+		<th>수량</th>
+		<th>합계</th>
+	</tr>
+	<tr>
+		<td>컴퓨터세트</td>
+		<td>2,000,000원</td>
+		<td id="t1"><input type="number" min="0" max="100" value="1" step="1" ></td>
+		<td id="t2"><input type ="text" name="합계" value="0"> </td>
+	</tr>
+	
+	<tr>
+		<td>티셔츠</td>
+		<td>50,000원</td>
+		<td id="t1"><input type="number" min="0" max="100" value="1" step="1" ></td>
+		<td id="t2"><input type ="text" name="합계" value="0"> </td>
+	</tr>
+	
+	<tr>
+		<td>음악파일</td>
+		<td>1,000원</td>
+		<td id="t1"><input type="number" min="0" max="100" value="1" step="1" ></td>
+		<td id="t2"><input type ="text" name="합계" value="0"> </td>
+	</tr>
+	
+	<tr>
+		<td>영화파일</td>
+		<td>5,000원</td>
+		<td id="t1"><input type="number" min="0" max="100" value="1" step="1" ></td>
+		<td id="t2"><input type ="text" name="합계" value="0"> </td>
+	</tr>
+	</table>
+	<br>
+	<input type ="button" value="계산">
+	<input type ="button" value="구매">
+	<input type ="button" value="초기화">
+	
+	<p><a href="../html/1.computer.html">Back to Home</a></p>
+	</div>
+</body>
+</html>

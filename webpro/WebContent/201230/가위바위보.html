@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가위바위보</title>
+<link rel="stylesheet" href="../css/public.css">
+
+<script type="text/javascript">
+
+window.onload = function(){
+	
+	//입력
+	var n1 = prompt("첫번째 사람 입력","가위바위보");
+	var n2 = prompt("두번째 사람 입력","가위바위보");
+	
+	var res = "";
+	res+="첫번째 사람 : " + n1 + "<br>";
+	res+="두번째 사람 : " + n2 + "<br>";
+	//비교
+	if(n1==n2){
+		res += "비김";
+	}else if(n1=="가위" && n2=="보"
+			|| n1=="바위"&& n2=="가위"
+			|| n1=="보"&& n2=="바위"){
+		res+="첫번째 사람 이김";
+		
+	}else{
+		res+="두번째 사람 이김";			
+		}
+	
+	//출력
+	result = document.getElementById('result');
+	result.innerHTML = res;	
+	
+}	
+</script>
+<style type="text/css">
+
+
+</style>
+</head>
+<body>
+<pre>
+	두 사람의 가위바위보를 입력한다.
+	prompt()함수를 이용
+	var n1 = prompt("첫번째 사람 입력","가위바위보");
+	var n2 = prompt("두번째 사람 입력","가위바위보");
+	
+	이긴 사람을 출력한다
+	비교문 if를 이용
+	
+	if(n1=="가위" && n2=="보")
+			|| n1=="바위"&& n2=="가위"
+			|| n1=="보"&& n2=="바위"){
+		res+="첫번째 사람 이김";
+		
+	}else{
+		res+="두번째 사람 이김";			
+		}
+	
+	
+	id가 result인 div요소에 innerHTML를 이용하여 출력한다.
+</pre>
+	<div id="result"></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+
+
+
+</html>

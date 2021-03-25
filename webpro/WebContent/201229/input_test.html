@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Input_test</title>
+<link	rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+	height: 100px;
+	border: 1px solid blue;
+	padding: 10px;
+	margin: 20px;
+	}
+
+</style>
+<script type="text/javascript">
+function calc() {
+	//id로 접근한다
+	invalue1 = document.getElementById('in1')
+	invalue2 = document.getElementById('in2')
+	
+	//접근한 id에서 입력한 값을 가져온다. - 문자열을 리턴
+	v1 = parseInt(invalue1.value);
+	v2 = parseInt(invalue2.value);
+	
+	calcvalue = v1 + v2;
+	
+	//출력
+	res1 = document.getElementById('in3');
+	res2 = document.getElementById('res1');
+	
+	res1.value = calcvalue;
+	res2.innerHTML = calcvalue;
+	
+}
+
+
+
+
+</script>
+</head>
+<body>
+<pre>
+	1.input 태그에서 입력한 값 가져오기
+	
+		input 요소 - id가 in1인 요소에 접근
+		invalue1 = document.getElementById('in1')
+	
+	2. 값 가져오기 - value를 이용한다, 문자열을 리턴, parseInt() 함수를 이용하여 정수로 변환한다.	
+		v1 = parseInt(invalue1.value);
+		
+	3. input 요소에 결과값 출력 - id가 in3인 요소, value를 이용하여 출력
+		res1 = document.getElementById('in3');
+		res1.value = calcvalue;
+	
+</pre>
+	입력1 <input id="in1" type="text"><br>
+	입력2 <input id="in2" type="text"><br>
+	<br>
+	결과 <input id="in3" type="text"><br>
+	
+	<div id="res1"></div>
+	<input type = "button" value="확인" onclick="calc()">
+	
+	
+	
+	
+	
+	
+</body>
+
+
+
+
+
+</html>

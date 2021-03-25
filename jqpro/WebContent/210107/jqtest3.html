@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){ //동적
+//	$('h1').css('color','red')	
+
+	hlist = $('h1')
+	hlist.css('color','green')  //jq 변수일때 $ 생략가능
+	$(hlist).eq(2).css('background','pink')
+	
+/*	hlist = document.getElementsByTagName('h1')
+	for(i=0; i < hlist.length; i++){
+		hlist[i].style.color = 'red'
+	}
+	hlist[3].style.backgroundColor = "yellow"
+*/	
+	
+})
+</script>
+<style type="text/css">
+h1{ 							//정적
+	color:blue;
+}
+
+
+</style>
+</head>
+<body>
+
+<pre>
+
+</pre>
+<h1>jQuery를 배웁시다1</h1>
+<h1>jQuery를 배웁시다2</h1>
+<h1>jQuery를 배웁시다3</h1>
+<h1>jQuery를 배웁시다4</h1>
+<h1>jQuery를 배웁시다5</h1>
+<h1>jQuery를 배웁시다6</h1>
+<input type="button" id="btn1" value="확인">
+<br>
+<div id="result1"></div>
+</body>
+</html>

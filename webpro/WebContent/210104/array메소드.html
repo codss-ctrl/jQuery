@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array메소드</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script type="text/javascript">
+arr = ["사과","복숭아","참외","포도","바나나","사과","메론","파인애플","사과"];
+
+function proc1(){
+	//과일 이름 입력
+	a = prompt("이름 입력");
+	
+	//입력한 과일이 배열에서 몇번째에 위치해 있는가
+	idx = arr.indexOf(a);// 없는 경우 : -1을 리턴
+	
+// 	res = "입력한 과일 : "+ a +"<br>";
+//	res = a + "는" + idx + "번째에 있습니다";
+	res = `입력한 과일 : ${a} <br>`;
+	if(idx >= 0){
+		
+		res += `${a}는 ${idx} 번째에 있습니다.`;
+	}else{
+		
+		res += `${a}는 없습니다.`;
+	}
+	document.querySelector("#result1").innerHTML = res;
+}
+
+function proc2(){
+	a = prompt("이름 입력");
+	idx = arr.lastIndexOf(a);
+	res = `입력한 과일 : ${a} <br>`;
+	if(idx >= 0){
+		
+		res += `${a}는 ${idx} 번째에 있습니다.`;
+	}else{ 
+		res += `${a}는 없습니다.`;
+	}
+	document.querySelector("#result2").innerHTML = res;
+}
+function proc3(){
+	
+	a = prompt("이름 입력");
+	idx =0;
+	res = res = `입력한 과일 : ${a} <br>`;
+	
+	
+	while(true){
+		idx = arr.indexOf(a,idx);
+		if(idx<0)break;
+		res +=`${idx}번째`;
+		idx++;
+	}
+	res+= "있습니다";
+		document.querySelector("#result3").innerHTML = res;
+}
+</script>
+<style type="text/css">
+div{
+	height: 20px;
+}
+</style>
+</head>
+<body>
+<pre>
+
+</pre>
+<input type="button" value="indexOf"  id="btn1" onclick="proc1()">
+<input type="button" value="lastIndexOf"  id="btn2" onclick="proc2()">
+<input type="button" value="여러개 중복찾기"  id="btn3" onclick="proc3()">
+
+<br>
+<div id="result1"></div>
+<div id="result2"></div>
+<div id="result3"></div>
+</body>
+</html>

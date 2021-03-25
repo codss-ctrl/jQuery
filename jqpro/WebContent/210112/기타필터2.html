@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기타필터2</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+
+	$('#btn1').on('click',function(){
+			res = "<h3>hidden</h3>";
+		$('form *:hidden').each(function(){
+			
+			console.log(this.tagName)
+			
+// 			input태그일때
+// 			$(this).attr('name')
+// 			$(this).var()
+			if(this.tagName == "INPUT"){
+				res += "input 객체 " +$(this).attr('name') + " " + $(this).val()+"<br>";
+			}else{
+//				input태그가 아닐때
+//	 			$(this).text()
+				res += this.tagName + " : " + $(this).text() + "<br>";
+			}
+
+			
+			
+			
+		})//반복 끝
+		$('#hidden').html(res);		
+	})//버튼 클릭 끝
+	
+	//btn2번 클릭
+	$('#btn2').on('click',function(){
+		
+		res = "<h3>visible</h3>";
+		
+		$('form *:visible').each(function(){
+			
+		if(this.tagName == "INPUT"){
+				
+			vtype = $(this).attr('type')
+				
+				//type == text?
+				if(vtype == 'text'){
+					res += $(this).attr('name')+ " "+ $(this).val()+"<br>";
+				
+				}else if(vtype == 'radio'){
+					//type == radio?
+					//선택된 상태값을 가져온다.
+				}if($(this).prop('checked')){
+						
+					res += $(this).attr('name') + " " + $(this).val() + "<br>"
+				
+				}else if(this.tagName != "BR"){
+			
+				}
+		}	
+				
+		})
+		$('#visible').html(res);
+		
+	})
+	
+	
+	
+	
+})//준비되면 끝
+
+</script>
+</head>
+<body>
+
+<pre>
+
+</pre>
+<input type="button" id="btn1" value="hidden">
+<input type="button" id="btn2" value="visible">
+<br>
+<div id="result1">
+<form id="testForm"> 
+	<input type="hidden" name="userAge" value="33">
+	
+	<input type="hidden" name="userCity" value="대전">
+	
+	I D : <input type="text" name="userID" value="hong">  
+	
+	<span style="display:none">ID가 중복됩니다. </span> <br>  
+	
+	이름 : <input type="text" name="userName" value="홍길동">   
+	
+	<span style="visibility:hidden">이름을 입력하세요</span><br>  
+	
+	성별 : <input type="radio" name="sung" value="남" checked>남자  
+	
+	<input type="radio" name="sung" value="여">여자  
+</form>
+
+</div>
+<div id="hidden"></div>
+<div id="visible"></div>
+</body>
+</html>

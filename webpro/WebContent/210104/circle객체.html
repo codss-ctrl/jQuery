@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+
+num = parseInt(prompt("반지름을 입력하세요"));
+	//객체정의
+circle = {
+	//속성 이름 : 속성값
+	 rad : num
+	//함수선언
+	getArea : function(){
+		return this.rad * this.rad * 3.14;
+	},
+	getCircum : function(){
+		return this.rad * 2 * 3.14 ;
+	}
+	
+}
+
+function proc1{
+	//선언되지 않은 name속성
+	circle.name = "원";
+	
+	res = "circle 정보 출력하기<br>";
+	res += `이름 : ${circle.name} <br>`;
+	res += `반지름 : ${circle.rad} <br>`;
+	res += `면적 : ${circle.getArea()} <br>`;
+	res += `둘레 : ${circle.getCircum()} <br>`;
+	
+	document.getElementById('result1').innerHTML += res;
+} 
+</script>
+</head>
+<body>
+
+<pre>
+
+</pre>
+<input type="button" value="확인" onclick="proc1">
+<br>
+<div id="result1"></div>
+
+
+</body>
+</html>

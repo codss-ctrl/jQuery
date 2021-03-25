@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다파라</title>
+<link rel="stylesheet" href="main.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<style type="text/css">
+	
+	.header{
+		height: 20%;
+		text-align: center;
+		padding : 20px;
+		background: black;
+		color: white;
+		
+	}
+	.nav{
+		text-align: center;
+		text-transform : uppercase; 
+		letter-spacing: 10px;
+		border-top: 1px dotted gray;
+		display: inline;
+		text-decoration: none;
+		margin: 10px;
+		font-weight: bold; 
+	}
+	.nav a:link{
+		color : black;
+	}
+	.nav a:hover{
+		background: lightgray;
+		
+	}
+	.nav a:active{
+		color : lightgray;
+		
+	}
+	.nav li{
+		display: inline;
+	}
+	a{
+		letter-spacing: 5px; /*자간*/
+		text-decoration: none; 
+		
+	}
+	.left{
+		width: calc(15% - 1%);
+		padidng: 1%;
+		float : left;
+		text-indent:5%;
+		text-decoration:none;
+		line-height:2.0;
+		letter-spacing: 2%;
+		background : lightgray;
+		border : 1px solid lightgray;
+		display: block;
+		}
+	.left h3{
+		text-transform : uppercase;
+		text-indent:20px;
+	}	
+	input[type=search]{
+		width: 50%;
+		margin-bottom: 5%;
+	}
+	.left a:link{
+		color : black;
+	}
+	.left a:hover{
+		background: white;
+		
+	}
+	.left a:active{
+		color : lightgray;
+		
+	}
+	
+	.middle{
+		width : 70%;    
+		height : auto;
+		margin-left: 15%;
+		margin-right: 15%;
+		
+	}
+	iframe{
+		width:calc(90% - 1%);
+		height: 100%;
+	}
+	
+	.right{
+		width: calc(15% - 1%);
+		display : block;
+		float : right;
+	}
+	.log_in{
+		display : inline-block;
+		width: 70px;
+    	height: 20px;
+	}
+	.bottom{
+		text-align: center;
+		margin-bottom: 10px;
+		margin-top : 90%;
+	}
+</style>
+<script type="text/javascript">
+
+
+
+</script>
+</head>
+<body>
+
+<div id="body">
+
+	<div class = "header">
+		<h1>
+           Shopping
+       </h1>
+	</div>
+	
+	<div class = "nav">
+			<ul>
+				<li><a onclick="show(1)" href="main.html">home</a></li>
+				<li><a onclick="show(2)" href="About_Us.html">about us</a></li>
+				<li><a onclick="show(3)" href="news.html">news</a></li>
+				<li><a onclick="show(4)" href="my_account.html">my account</a></li>
+				<li><a onclick="show(5)" href="contact.html">contacts </a></li>
+			</ul>		
+	</div>
+	
+	<div class = "section">
+		<div class="left">
+			<ul>
+				<h3>Category</h3>
+				<input type="search" name="search">
+			  	<input type="submit" value="검색">
+	            <li><a href="computer.html" target="ifr">컴퓨터</a></li>
+	            <li><a href="clothing.html" target="ifr">의류</a></li>
+	            <li><a href="음악.html" target="ifr">음악</a></li>
+	            <li><a href="영화.html" target="ifr">영화</a></li>
+	            <li><a href="스포츠,레저.html" target="ifr">스포츠/레저</a></li>
+	            <li><a href="가구,인테리어.html" target="ifr">가구/인테리어</a></li>
+	            <li><a href="식품.html" target="ifr">식품</a></li>
+        	</ul>
+       </div>
+       
+		<div class="right">
+        	<h3>Shopping Cart</h3> 
+        	현재 쇼핑카트에 물품이 없습니다.<br>
+        	<br>
+	        <input type="button" value="쇼핑카트 보기" onclick="cart.html">  
+       
+       		<h3>Log In</h3>
+            <label class="log_in">이름</label>
+			<input type="text" name="name"><br><br>
+            <label class="log_in">패스워드</label>
+            <input type="text" name="name"><br><br>
+            <input type="submit" value="로그인" >  
+            <input type="reset" value="초기화">  
+	     </div> 
+	     <div class="middle">
+          <iframe src=“./computer.html” name="ifr" style = "height:1500px; border:none; padding:0px 1px;" title=“iframe”> 
+           </iframe>
+		</div>
+	</div>
+   	
+   	
+	<div class="bottom">
+		<h4>Copyright (c) 2020</h4>
+	</div>
+	
+</div>
+
+
+</body>
+</html>

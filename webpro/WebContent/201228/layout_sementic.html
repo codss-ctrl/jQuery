@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout_sementic</title>
+<style>
+header,nav,section,article,footer{
+	
+	border: 1px solid gray;
+	border-radius : 20px;
+	box-sizing: border-box; //content-box
+	
+}
+header{
+	width: 100%;
+	height: 100px;
+	background: #f1d9ee;
+	float: top;
+	margin:2px;
+}
+section{
+	height: 500px;
+	width: calc(78% - 1%);
+	background: #d2d2d2;
+	float:right;
+	
+	}
+article{
+	
+	width: calc(90% - 1%);
+	height:40%;
+	overflow: auto;
+	margin:1px;
+	padding:5px
+}
+nav{
+	height: 500px;
+	width: calc(20% - 1%);
+	background: #808000;
+	float: left;
+	margin:1px;
+	padding:5px
+}
+
+footer{
+	background: #d2faed;
+	width: 100%;
+	height:100px;
+	clear:both;
+	float: bottom;
+	margin:1px;
+	}
+</style>
+</head>
+<body>
+	<header></header>
+	<nav></nav>
+	
+	<section id = "content">
+	
+	<article id= "art1">	</article>
+	
+	<article id= "art2">	 </article>
+	
+	</section>
+	
+	<footer></footer> 
+</body>
+</html>

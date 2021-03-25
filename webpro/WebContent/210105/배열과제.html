@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열과제</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+function proc1{
+	//입력받아 저장
+	  name = prompt("이름 입력");
+ 	var arr = new Array();
+ 	res = "";
+ 	while (true) {
+ 		arr += name;
+		if (name = ""||name=null) {
+			res+="종료";
+	}
+	res+="입력한 이름은 : " + arr + "<br>";
+ }
+ 
+	
+	//break 문
+	
+	
+	//출력
+	document.getElementById('result1').innerHTML = res;
+	
+}
+function proc2{
+	//정수 담을 배열
+	var array = new Array;
+	
+	while(true){
+		//정수 받기
+		a = parseInt(prompt("정수 입력"));
+		
+		for ( k = 0; k < ; k++) {
+			array += a; //배열에 저장
+		}
+		if (a>=5) {//
+			break;
+		}else if(array.indexOf(k)==-1){
+			break;
+		}
+		
+	}	
+}
+
+</script>
+</head>
+<body>
+
+<pre>
+1.사람 이름을 계속 입력 받아 배열에 저장하고 그 저장된 이름을 출력하는 프로그램을 작성하시오.
+(단, 입력은 prompt 명령을 이용하고, 입력의 마지막은 공백문자를 입력하거나 "취소" 버튼을 눌렀을 때로 한다.
+ "취소" 버튼은 null 이 입력될 때이다.)
+                      
+
+</pre>
+<input type="button" value="확인" onclick="proc1">
+<br>
+<div id="result1"></div>
+<pre>
+2.서로 중복되지 않은 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오.Js_array객체
+
+// while(true){
+	a = prompt() >=5-> break
+		if{
+		>=5-> break
+		indexOf로 비교->배열에 없으면 마이너스 나오는 걸로 비교
+		a ==-1 -> 	
+		}	
+	}arr.push(a)
+</pre>
+<input type="button" value="확인" onclick="proc2">
+<br>
+<div id="result2"></div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" href="../css/public.css" type="text/css">
+
+
+</head>
+
+<style>
+
+
+	select{
+	width: 100px;
+	
+	
+	}
+
+
+</style>
+
+
+<body>
+<pre >
+      어떤 새로운 기능을 부여할 수 있다.
+	  onclick = "함수명()"	 
+	  여러개의 파일에서 공통으로 같은 스타일을 지정하고자 한다.
+	  css파일을 별도의 파일로 작성하고 저장한다.
+	  적용하고자 하는 html 또는 jsp에서
+	  &lt;link rel="stylesheet" href="../css/public.css" type="text/css"&gt;
+	  
+ 전송기능을 수행:
+	&lt;button type="submit"&gt;
+	&lt;input type="submit"&gt;
+		
+	전송기능이 없는 :
+	&lt;button type="button"&gt;
+	&lt;input type="button" value="확인"&gt;
+
+	
+	  
+</pre>
+	<div>
+		<form action="type.jsp" method="Post">
+		
+		아이디 <input type="text" name="id"><br>
+		비밀번호 <input type="password" name="pass"><br>
+		
+		자기소개<br>
+		<textarea name="area" rows="10" cols="50"></textarea><br><br>
+		
+		취미 : 하나만 선택
+		<br>
+			<select name="cars">
+				<option value="수영" selected="selected">수영하기</option>
+				<option value="독서">독서하기</option>
+				<option value="영화">영화보기
+				</option>
+				<option value="자기">수면</option>
+		
+			</select>
+		<br><br>
+	취미 : 여러개 선택 (size="3" multiple)<br>
+			<br>
+			<select size=5 multiple="multiple">
+				<option value="수영" selected="selected">수영하기</option>
+				<option value="독서">독서하기</option>
+				<option value="영화">영화보기
+				</option>
+				<option value="자기">수면</option>
+				<option value="청소">청소</option>
+		
+			</select>
+		<br><br>		
+		
+		
+		
+		<button type="button" onclick="alert('HELLO!')">확인</button><!-- 버튼 닫는 태그 있음 value 필요없음-->
+		<input type="button" onclick="alert('ㅇㅅㅇ')" value="얄루"><br>
+		<button type="submit">전송</button>
+		<input type="submit">
+			
+		
+		
+		
+
+				
+		</form>
+		
+		
+	
+	
+	
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<link rel="stylesheet" href = "../css/public.css">
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript">
+
+function proc1(){
+	//배열선언, 지역변수=>var fruit은 proc1에서만 사용가능
+	var fruit = ["사과","복숭아","파인애플","포도"];
+	
+	//전역변수=>result는 call에서도 사용가능
+	result = document.querySelector("#result1");
+	
+	//print함수 호출=> fruit를 f로 넘김 => f1이 됨
+	print(fruit);
+}
+function print(f){
+	res="";
+
+	for( i = 0; i < f.length; i++) {
+		res += f[i] + "&nbsp;&nbsp;&nbsp;";
+	}
+	result.innerHTML = res;
+
+}
+function proc2(){
+	//배열선언, 지역변수=>var fruit은 proc1에서만 사용가능
+	var fruit = ["사과","복숭아","망고","딸기"];
+	
+	//전역변수=>result는 call에서도 사용가능
+	result = document.querySelector("#result2");
+	
+	//print함수 호출=> fruit를 f로 넘김 => f1이 됨
+	print(fruit);
+	
+}
+function proc3(){
+	//배열생성
+	var fr = new Array(3);
+	fr[0] = "사과";
+	fr[1] = "복숭아";
+	fr[2] = "파인애플";
+	fr[3] = "바나나";// => 선언시 초기화된 배열 개수 이상으로 입력가능
+	//전역변수=>result는 call에서도 사용가능
+	result = document.querySelector("#result3");
+	//print함수 호출=> fruit를 f로 넘김 => f1이 됨
+	print(fr);
+}
+
+
+</script>
+
+</head>
+
+<body>
+<pre>
+	1. 리터럴로 배열생성
+	var fruit = ["사과","복숭아","파인애플","포도"];
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br>
+<div id = "result1"></div>
+<br>
+
+<pre>
+	2. 생성자로 배열생성
+	var fruit = new Array("사과","복숭아","파인애플","포도");
+</pre>
+
+<input type="button" value="확인" onclick="proc2()">
+<br>
+<div id = "result2"></div>
+<br>
+
+<pre>
+	3. 리터럴로 배열생성
+	var fruit = new Array(3);
+	fr[0] = "사과";
+	fr[1] = "복숭아";
+	fr[2] = "파인애플";
+	fr[3] = "포도"; => 선언시 초기화된 배열 개수 이상으로 입력가능
+</pre>
+
+<input type="button" value="확인" onclick="proc3()">
+<br>
+<div id = "result3"></div>
+
+
+</body>
+</html>

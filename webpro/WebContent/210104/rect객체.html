@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>rect객체</title>
+<link rel="stylesheet" href="../css/public.css">
+
+<script type="text/javascript">
+	//가로, 세로 값을 입력
+	garo = parseInt(prompt("가로"));
+	sero = parseInt(prompt("세로"));
+	//객체정의
+rect = {
+	//속성 속성이름 : 속성값
+		width : garo,
+		height : sero,
+		//함수선언
+		getArea : function(){
+			return this.width * this.height
+		},
+		getCircum : function(){
+			return (this.width + this.height)*2
+		}
+}
+function proc1(){
+	
+	//선언되지 않은 name속성을 rect객체로 사용 가능
+	rect.name = "네모";
+	
+	
+	res = "Rect 정보 출력하기<br>";
+	res += `이름 : ${rect.name} <br>`;
+	res += `가로 : ${rect.width} <br>`;
+	res += `세로 : ${rect.height} <br>`;
+	
+	res += `면적 : ${rect.getArea()} <br>`;
+	res += `둘레 : ${rect.getCircum()} <br>`;
+	
+	document.getElementById('result1').innerHTML += res;
+}
+</script>
+</head>
+
+<body>
+
+
+<pre>
+실행하자마자 가로와 세로의길이값을 입력한다. 
+입력한 값으로 사각형의 가로 세로의 값을 설정한다.
+확인버튼 클릭하면 사각형의 정보를 출력한다.
+
+리터럴에 의한 객체 형성
+rect = {
+//속성 속성이름 : 속성값
+		width= garo,
+		height= sero,
+		//함수선언
+		getArea : function)(){
+			return : this.width + this.height;
+		}
+		getCircum : function(){
+			return (this.wdith + this.height)*2;
+		}
+}
+rect객체 사용
+rect.width
+rect.height
+area = rect.getArea()
+circum = rect.getCircum()
+
+
+</pre>
+
+<input type="button" value="확인" onclick="proc1()">
+<div id="result1"></div>
+
+</body>
+
+</html>
+	
+	
+	

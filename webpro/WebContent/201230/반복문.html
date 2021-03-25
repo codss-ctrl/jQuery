@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문</title>
+<link rel="stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<style type="text/css">
+
+div{
+	height: auto;
+
+}
+.aa{
+	text-align : center;
+	width: 100px;
+	height: auto;
+	border: 1px dotted orange;
+	margin : 3px;
+	padding : 10px;
+	float: left;
+}
+#result2{
+	width:1050px;
+	height:300px;
+
+}
+table{
+	border: 2px solid blue;
+	border-spacing : 20px;
+}
+td{
+	width: 50px;
+	height: 40px;
+	padding: 5px;
+	margin: 2px;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+function gugu1() {
+	//단 수 입력
+	su = prompt("수 입력");
+	res = su +"단...<br> ";
+	for (var i = 1; i < 9; i++) {
+		res += su +"*"+i +"="+su*i+ "<br>";
+	}
+	result1 = document.querySelector("#result1");
+	result1.innerHTML = res;
+	
+}
+function gugu2() {
+	
+	res = "";
+	for (var i = 2; i <= 9; i++) {
+		res += "<div class='aa'>"
+		res += i + "단...<br>";
+		for (var k = 1; k <= 9; k++) {
+		res += i + "*" + k + "=" + i*k + "<br>";
+		}
+		res += "</div>"
+	}
+	
+	result2 = document.querySelector("#result2");
+	result2.innerHTML = res;
+
+}
+function gugu3(){
+	
+	res = "<table border='1'>";
+	for (var i = 1; i < 10; i++) {
+		res += "<tr><td>"+i + "</td>" ;
+		for (var k = 1; k < 10; k++) {
+		res += "<td>"	+   i*k   + "</td>";
+		} 
+		res +="</tr>";
+	}
+	res += "</table>";
+	
+	
+	result3 = document.querySelector("#result3");
+	result3.innerHTML = res;
+}
+
+
+
+
+</script>
+
+</head>
+<body>
+<pre>
+	다중반복문 - 구구단 출력
+	버튼을 클릭하면 구구단 수를 입력
+	입력한 단의 구구단을 출력한다.
+
+</pre>
+<input type="button" id="btn1" value="확인" onclick="gugu1()">
+<div id="result1"></div>
+<pre>
+	다중 반복문을 이용한 구구단
+	2 - 1,2,3,4,5,6,7,8,9
+	*
+	*
+	*
+	9 - 1,2,3,4,5,6,7,8,9
+	
+</pre>
+<input type="button" id="btn2" value="확인" onclick="gugu2()">
+<div id="result2"></div>
+
+<pre>
+	테이블을 이용한 구구단 출력
+	첫번째 for 에서 tr을 구성
+	두번째 for에서 각각의 td를 구성
+	
+</pre>
+<div id="result3"></div>
+<input type="button" id="btn3" value="확인" onclick="gugu3()">
+
+
+
+
+</body>
+</html>

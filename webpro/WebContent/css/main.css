@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+div{
+	border-sizing : border-box;
+	display: block;
+	}
+	
+ul{
+	 list-style:none;
+	 line-height : 2.0;
+	 text-decoration: none;
+	}	
+li{
+	list-style:none;	
+	text-decoration:none;
+}	

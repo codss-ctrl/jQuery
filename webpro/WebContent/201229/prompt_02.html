@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prompt_02</title>
+<link rel="stylesheet" href="../css/public.css">
+<script type="text/javascript">
+	function calc() {
+		//2개의 정수를 입력받는다.
+		input = prompt("정수1을 입력"); //input=10
+		x = parseInt(input);
+		input = prompt("정수2를 입력"); //input=20
+		y = parseInt(input);
+		z = parseInt(x + y);
+		
+		vd1 = document.getElementById('d1')
+		vd1.innerHTML = "입력1 : " + x + "<br>" + "입력2 :" + y + "<br> 결과 : "+ z;
+		
+	}
+	
+
+
+</script>
+</head>
+<body>
+<pre>
+	입력: prompt
+	리턴 결과 : String 
+	parseInt() 함수를 이용하여 정수로 변환한다.
+	
+	input = prompt("정수1을 입력"); //input=10
+	x = parseInt(input);
+	
+	
+</pre>
+
+
+
+	<button type="button" onclick="calc()">확인</button>
+	<br>
+	<div id="d1"></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

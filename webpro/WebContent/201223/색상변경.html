@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+	height: 300px;
+	margin:10px;
+	border: 1px solid blue;
+	}
+</style>
+<script>
+	function change(a){
+		
+		cr = parseInt(Math.random()*255);
+		cb = parseInt(Math.random()*255);
+		cg = parseInt(Math.random()*255);
+//		a.style.background="rgb("+cr+","+cb+","+cg+")"	
+
+// 		16진수로 변경		
+		crr = cr.toString(16);
+		cbb = cb.toString(16);
+		cgg = cg.toString(16);
+		a.style.background = "#"+crr+cbb+cgg;
+		
+	}
+</script>
+</head>
+<body>
+	<div onclick="change(this)">
+	 
+	
+	</div>
+	
+	<div onclick="change(this)">
+	 
+	
+	</div>
+	
+	<div onclick="change(this)">
+	 
+<!-- 	this=>자기자신을 나타내는 객체변수 -->
+	</div>
+</body>
+</html>

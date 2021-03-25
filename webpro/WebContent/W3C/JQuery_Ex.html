@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+
+<pre>
+1. Use the correct selector to hide all elements with an href attribute.
+	
+	$("[href]").hide();
+2. When the mouse pointer enters a <p> element, it should be hidden. Use the correct event to do so.
+
+
+	$("p").mouseenter(function(){
+	 	$(this).hide();
+	 });	
+	
+3. If you press a keyboard key inside an <input> element, it should be hidden. Use the correct event to do so.
+
+
+	$("input").keypress(function(){
+	  $(this).hide();
+	});	
+	
+4. Use a jQuery method to hide a <p> element when it is clicked on.
+
+	Note: The speed should be "slow".
+	
+	$("p").click(function(){
+		$(this).hide("slow");
+	});	
+	
+5.	Use a jQuery method to fade a <div> element to an opacity of "0.2".
+
+	$("div").fadeTo("slow", 0.2);
+
+6. Use the animate() method to move a <div> element 250 pixels to the right.
+
+	$("div").animate({left: '250px'});
+
+7. Use a jQuery method to change the value of an image's src attribute to "myimage.jpg".
+
+
+	$("img").attr("src", "myimage.jpg");
+
+8. Use a jQuery method to only remove the child elements of a <div> element.
+
+
+	$("div").empty();
+
+9. Use a jQuery method to add the "important" class to a <p> element.
+
+
+	$("p").addClass("important");
+
+10. Use a jQuery method to toggle between adding and removing the "important" class from the <p> element on click.
+
+
+	$("p").click(function(){$(this).toggleClass("important");});
+
+11. Return the background color of a <p> element.
+
+
+	$("p").css("background-color");	
+	
+12. Use jQuery methods to set the height and width of <div> to 500 pixels.
+
+
+	$("div").height(500).width(500);	
+	
+13.	Use a jQuery method to get the height of a <div> element, including padding (not border and margin).
+
+
+	$("div").innerHeight();
+	
+	
+14.Use a jQuery method to get the height of a <div> element, including padding and border.
+
+
+	$("div").outerHeight();
+	
+15. Use a jQuery method to get the height of a <div> element, including padding, border and margin.
+
+
+	$("div").outerHeight(true);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</pre>
+<input type="button" id="btn1" value="확인">
+<br>
+<div id="result1"></div>
+</body>
+</html>

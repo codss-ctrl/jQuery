@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>circle</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	//리터럴에 의한 객체 형성
+	//반지름 값 입력
+num = parseInt(prompt("반지름을 입력하세요"));
+	//객체정의
+cir = {
+	//속성 이름 : 속성값
+	 rad : num
+	//함수선언
+	getArea : function(){
+		return rad * trad * 3.14;
+	},
+	getCircum : function(){
+		return rad * 2 * 3.14 ;
+	}
+		
+}
+
+function proc1{
+	//선언되지 않은 name속성
+	cir.name = "원";
+	
+	res = "circle 정보 출력하기<br>";
+	res += `이름 : ${cir.name} <br>`;
+	res += `반지름 : ${cir.rad} <br>`;
+	res += `면적 : ${cir.getArea()} <br>`;
+	res += `둘레 : ${cir.getCircum()} <br>`;
+	document.getElementById('result1').innerHTML += res;
+} 
+function Circle(r,n){//객체 생성자
+	//속성정의
+	this.rad =r;
+	this.name = n;
+	//함수 정의
+	getArea : function(){
+		return this.rad * this.rad * 3.14;
+	},
+	getCircum : function(){
+		return this.rad * 2 * 3.14 ;
+	}
+		print = function(cc){
+		re = `Circle(${cc}) 정보 출력하기<br>`;
+		re += `이름 : ${Circle.name} <br>`;
+		re += `반지름 : ${Circle.rad} <br>`;
+		re += `면적 : ${Circle.getArea()} <br>`;
+		re += `둘레 : ${Circle.getCircum()} <br>`;
+		
+
+		document.querySelector('#result2').innerHTML += re;
+	}
+}
+function proc2{
+	//객체 생성
+	r1 = new Circle(3,"원");
+	r2 = new Circle(5,"동그라미");
+	
+	r1.print(r1);
+	r2.print(r2);
+}
+
+circ = { }
+
+function proc3{//동적 추가
+	//객체 안에 속성을 추가
+	circ.name = "원"
+	circ.rad = 4;
+	
+	//객체 안에 함수를 추가
+	circ.getArea : function(){
+		return this.rad * this.rad * 3.14;
+	},
+	circ.getCircum : function(){
+		return this.rad * 2 * 3.14 ;
+	}
+	circ.print = function(){
+		res1 = "Circ 정보 출력하기<br>";
+		res1 += `이름 : ${circ.name} <br>`;
+		res1 += `반지름 : ${circ.rad} <br>`;
+		res1 += `면적 : ${circ.getArea()} <br>`;
+		res1 += `둘레 : ${circ.getCircum()} <br>`;
+		document.querySelector("#result3").innerHTML += res1;
+	}	
+	//함수 호출
+	circ.print();
+}
+
+</script>
+</head>
+<body>
+
+<pre>
+반지름 rad
+name
+면적 getArea()
+getCircum()
+
+print
+
+</pre>
+<input type="button" value="확인" onclick="proc1">
+<br>
+<div id="result1"></div>
+<input type="button" value="확인" onclick="proc2">
+<br>
+<div id="result2"></div>
+<input type="button" value="확인" onclick="proc3">
+<br>
+<div id="result3"></div>
+</body>
+</html>

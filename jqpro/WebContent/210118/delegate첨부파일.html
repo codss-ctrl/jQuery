@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>delegate첨부파일</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+	
+	count = 0;
+	
+	$('#add').on('click',function(){
+		count++;
+		
+		//태그 만드는 방식 : $("<p></p>",{properies})
+		file = "<p id = '" + count + "'>";
+		file += "파일 : <input type = 'file'>";
+		file += "<button class = 'del'>삭제</button>";
+		file += "</p>"
+		
+		$(file).appendTo('#result1')
+		
+		//삭제버튼에 대한 이벤트 - delegate	
+		$('#result1').on('click', '.del', function(){
+
+// 			idvalue = $(this).parent().attr('id');
+// 			alert(idvalue + "삭제")
+			$(this).parent().remove();
+		})
+	
+	})
+	
+	
+})
+</script>
+</head>
+<body>
+
+<pre>
+
+</pre>
+
+<br>
+<div id="result1">
+	이름 <input type="text" id = "name" ><br>
+	파일 <input type="file" ><br>
+	<button type = "button" id = "add" >추가</button>
+	
+
+
+</div>
+</body>
+</html>

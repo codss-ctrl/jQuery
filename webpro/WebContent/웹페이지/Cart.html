@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cart</title>
+<link rel="stylesheet" href="main.css">
+<style type="text/css">
+	.form{
+	margin : 30% 30%;
+	
+	}
+	.checkbox{
+		float: left;
+	}
+	table{
+		width : 600px;
+		border-collapse: collapse;
+		
+	}
+	tr{
+		width: 600px;
+		padding : 2px;
+	}
+	th{
+		width: 150px;
+	}
+	.form input{
+		margin: 1px;
+		float : right;
+	}
+	
+</style>
+<script type="text/javascript">
+	function calc(){
+		
+	}
+	function item_sum(){
+		
+	}
+</script>
+</head>
+
+<body>
+
+<div id = "cart">
+	
+	<div class = "form">
+		
+		<table border = "1">
+			<h1 style="text-align: center">쇼핑 카트</h1>
+			
+			<tr class = index>
+				<th>품목</th>
+				<th>가격</th>
+				<th>수량</th>
+				<th>합계</th>
+			</tr>
+			
+			<tr class = item_1>
+				<th>컴퓨터 세트</th>
+				<th>2,000,000원</th>
+				<th><input type="number" name="quantity" min="1" max="99"></th>
+				<th class="item_1_sum"></th>
+			</tr>
+			<tr class = item_2>
+				<th>티셔츠</th>
+				<th>40,000원</th>
+				<th><input type="number" name="quantity" min="1" max="99"></th>
+				<th class="item_2_sum"></th>
+			</tr>
+			<tr class = item_3>
+				<th>음악파일</th>
+				<th>1,000원</th>
+				<th><input type="number" name="quantity" min="1" max="99"></th>
+				<th class="item_3_sum"></th>
+			</tr>
+			<tr class = item_4>
+				<th>영화파일</th>
+				<th>10,000원</th>
+				<th><input type="number" name="quantity" min="1" max="99"></th>
+				<th class="item_4_sum"></th>
+			</tr>
+		</table>
+		<br><br>
+		<a href="computer.html" target = "ifr">메인으로</a> 
+			
+		<input type="button" value="계산" onclick="calc()">
+		<input type="submit" value="구매" name="buy">
+		<input type="reset" value="초기화" name="reset">
+	</div>
+	
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Shopping</title>
+<link>
+<style type="text/css">
+
+#header{
+	padding-top:30px;
+}
+#nav{
+	
+	margin-top:50px;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+.list_nav{
+	float:left;
+	
+	padding: 20px;
+	
+	/*none, inline, block, inline-block*/
+	margin: 10px;
+}
+
+.list_nav li{
+	display: inline;
+	/*none, inline, block, inline-block*/
+	margin: 10px;
+}
+#aside_left{
+	border :3px solid black;
+	float: left;
+	margin-top : 20px;
+	height: 500px;
+	width: 100px;
+	dispay: block;
+}
+#aside_right{
+	float:right;
+	border :3px solid black;
+}
+#footer{
+	border :3px solid black;
+	float:bottom;
+	margin-bottom: 10px;
+}
+</style>
+<script type="text/javascript">
+function show(a){	
+	if(a == 1){
+	a = document.getElementById('menu1')
+	}else if(a == 2){
+		a = document.getElementById('menu2')
+	}else if(a == 3){
+		a = document.getElementById('menu3')
+	}else {
+		a = document.getElementById('menu4')
+	}
+		a.style.display = "block";
+
+}
+function cart{
+	
+	
+	
+}
+
+</script>
+</head>
+<body>
+
+<div id="header">
+	
+		
+            <a href="main.html">Web Shopping</a></li>
+      
+	
+	
+</div>	
+	
+<div id="nav">
+	
+	<div class = "nav_menu">
+		<ul class="list_nav">
+			<li class = "nav_news">
+				<a href="news.html">news</a></li>
+			<li class = "nav_account">
+				<a href="my account.html">my account</a></li>
+			<li class = "nav_contacts">
+				<a href="contacts.html">contacts</a></li>			
+		</ul>
+	</div>	
+
+
+</div>
+
+<div id="aside_left">
+	
+	<div class = "category">
+		<ul class="category_list">
+			<li class = "cate_computer">
+				<a href="computer.html">컴퓨터</a></li>
+			<li class = "cate_clothing">
+				<a href="clothing.html">의류</a></li>
+			<li class = "cate_music">
+				<a href="음악.html">음악</a></li>
+			<li class = "cate_movie">
+				<a href="영화.html">영화</a></li>
+			<li class = "cate_sports">
+				<a href="스포츠,레저.html">스포츠/레저</a></li>
+			<li class = "cate_furniture">
+				<a href="가구,인테리어.html">가구/인테리어</a></li>
+			<li class = "cate_food">
+				<a href="식품.html">식품</a></li>							
+		</ul>
+	</div>	
+   	
+</div>
+	
+<div id="section">
+        <div class="article1">
+            <iframe src=“computer.html” name=“ifr”></iframe>
+   
+     	</div>
+</div>
+    
+<div id="aside_right">
+ 
+ 	<div id="shopcart">
+	  <h3>Shopping Cart</h3> 
+	    현재 쇼핑카트에 물품이 없습니다.<br>
+	     	<br>
+	     	
+	   <input type="submit" value="쇼핑카트 보기" onclick="cart">  
+ 	</div>
+
+	 <div id="login">
+	    <h3>Log In</h3>
+	       <form action="login.jsp" method="post">
+	        <label>이름</label>
+		 	<input type="text" name="username"><br><br>
+	
+	        <label>패스워드</label>
+	        <input type="password" name="pwd"><br><br>
+	        
+	        <input type="submit" value = "로그인">
+	        <input type="reset" value = "초기화" ><br>
+	        <a href = "회원가입페이지.html" >회원가입</a>
+	        <a href = "비밀번호찾기.html.html" >비밀번호 분실</a>
+	       </form>
+	 </div>
+ </div>
+
+<div id=footer>Copyright (c) 2020</div>
+
+
+</body>
+</html>

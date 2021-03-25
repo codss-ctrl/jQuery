@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+pre{
+	
+	
+}
+label{
+	
+	background: #b0e0e6;
+	font-size: 1.5em;
+	border: 1px solid #191970;
+	padding:7px;
+	font-weight : bold;
+	        
+	
+}
+
+button{
+	text-align: center;
+	background-position: center center;
+	margin-left: 10px;
+	font-weight: bold;
+	padding-left: auto;
+}

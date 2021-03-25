@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+	div{
+	border-sizing : border-box;
+	display: block;
+	}
+	
+	ul{
+	 list-style:none;
+	 line-height : 2.0;
+	 text-decoration: none;
+	}	
+	li{
+	list-style:none;	
+	text-decoration:none;
+}	
+	.container{
+		border: 1px dotted gray;
+		float:left;
+		display:block;
+		width:20%;
+		margin:1%;
+	}
+	
+ 	img{
+		width:100%;
+		height:100%;
+		align: center;
+		display: inline;
+		
+	}
+	h4{
+		text-align: center;
+		display: block;
+	}
+	h5{
+		display: block;
+		
+	}
+	input[type=button]{
+		height:40%;
+		width:60%;
+		margin-top:3%;
+		margin-bottom:3%;
+		margin-left: 30%;
+	}
+	

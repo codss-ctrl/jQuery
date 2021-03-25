@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+function proc1(){
+	now = new Date();
+	res = "";
+	
+	res += now.toLocaleString() + "&nbsp;&nbsp;&nbsp;"
+	
+	a = now.getDay(); //a : 0(일요일)~6(토요일)
+	
+	switch(a){
+	
+	case 0:
+		res += "일요일";
+		break;
+	case 1:
+		res += "월요일";
+		break;	
+	case 2:
+		res += "화요일";
+		break;
+	case 3:
+		res += "수요일";
+		break;
+	case 4:
+		res += "목요일";
+		break;
+	case 5:
+		res += "금요일";
+		break;
+	case 6:
+		res += "토요일";
+		break;	
+	}
+	
+	document.getElementById("result1").innerHTML = res;
+	
+}
+function proc2{
+	days = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+	a = now.getDay();
+	res = now.toLocaleString[]+"&nbsp;&nbsp;&nbsp;";
+	
+	res += days[a] + "입니다";
+	
+	document.getElementById("result2").innerHTML = res;
+	
+}
+</script>
+</head>
+<body>
+
+<pre>
+요일 구하기
+now = new Date();
+a = now.getDay();
+switch(a){
+	case 0:일요일
+	case 1:월요일
+	case 2:화요일
+
+}
+
+배열을 이용한 요일 구하기
+days = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
+		days[0] days[1] days[2] days[3] days[4]days[5]days[6]
+		0,1,2 -> now.getDay();
+</pre>
+<input type="button" value="확인" onlclick="proc1()">
+<input type="button" value="확인" onlclick="proc2()">
+<br>
+<div id="result1"></div>
+<div id="result2"></div>
+</body>
+</html>

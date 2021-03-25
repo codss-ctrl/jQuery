@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>테이블 행열 병합
+		</title>
+		<style>
+		
+			#tab1{
+				margin : 40px;
+				border: 5px solid #458982;
+				border-collapse:collapse;
+			}
+			
+			
+			#tab2{
+				margin:40px;
+				border: 5px solid #FF6347;}
+			
+			#tab3{
+				width :600px;
+				height:300px;
+				margin : 40px;
+				border : 4px solid blue;
+				}
+			#tab3 td{
+				text-align:center;
+				}
+				
+			#tab3 #dom1 {
+				width:200px;
+				height:15px;
+				}
+				
+			#tab1 th{
+				border-bottom:5px double gray;
+			}
+			#tab2 td{
+				width: 20px;
+				height: 10px;
+			
+			}
+			#tab1 td{
+				width : 40px;
+				height:10px;
+				text-align:center;
+				}
+				
+			#tab3 .td3{
+				text-align:left;
+			}
+			
+			caption{
+				//margin-bottom:40px;
+				//margin-top:40px;
+				margin:40px;
+				color:#458982;
+				font-size: 2px;
+				caption-side: bottom;
+				
+			
+				
+			
+			}
+			
+
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+	
+		<table id="tab1" border="1">
+			<caption>
+			재밌는 영화
+			</caption>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			
+			<tr>
+				<td >1</td>
+				<td >2</td>
+				<td>3</td>
+			</tr>
+			
+			<tr>
+				<td rowspan="2" >1</td>
+				<td>2</td>
+				<td>3</td>
+								
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>2</td>
+							
+			</tr>
+			<tr>
+				<td colspan="3">1</td>
+				
+			</tr>
+			
+			</table>
+		<table id="tab2" border="1">
+		
+			<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<td colspan="4">	</td>
+			<td colspan="2">	</td>
+			
+			</tr>
+			
+			<tr>
+			<td colspan="4">	</td>
+			<td colspan="2" rowspan="2">	</td>
+			
+			</tr>
+			
+			<tr>
+			<td>			</td>
+			<td>			</td>
+			<td></td>
+			<td></td>
+			</tr>
+		</table>
+		
+		
+		
+		<table id="tab3" table border="1">
+		
+			<tr>
+				<td colspan="5">평생교육원 강좌 소개</td>
+			</tr>
+			
+			<tr>
+				<td>강좌이름</td>
+				<td >강의자</td>
+				<td id= "dom1">소개</td>
+				<td>강좌코드</td>
+				<td>실습비</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td ></td>
+				<td class="td3">difdfg</td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td ></td>
+				<td class="td3" >dedffe</td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td ></td>
+				<td ></td>
+				<td></td>
+				<td></td>
+			</tr>
+		
+		
+		
+		</table>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

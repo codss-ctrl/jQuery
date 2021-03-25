@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+	$('#btn1').on('click',function(){
+		$.ajax({
+			url : '../210125/text.jsp',
+			type : 'get',
+			sucess : function(res){
+				code = res.split("/")
+				res = "<ul>"
+				
+				$.each(code,function(i){
+					res += "<li>" + code[i] + "</li>"
+				})
+				res += "</ul>"
+				$('#result1').html(res)
+			},
+			error : function(aa){
+				alert("상태 : " + aa.status)
+			},
+			dataType : 'text'
+			
+		})
+		
+	})
+	
+	$('#btn2').on('click',function(){
+		$.ajax({
+			url : '../210125/json.jsp',
+			type : 'get',
+			sucess : function(res){
+			 	code = "";
+				code += "이름 : " + res.name + "<br>"
+				code += "주소 : " + res.addr + "<br>"
+				code += "전화번호 : " + res.tel + "<br>"
+				$('#result2').html(code)
+			},
+			error : function(aa){
+				alert("상태 : " + aa.status)
+			},
+			dataType : 'json'
+			
+		})
+		
+	})
+	
+	$('#btn3').on('click',function(){
+		$.ajax({
+			url : '../210125/arr.jsp',
+			type : 'get',
+			sucess : function(res){
+				code = "<ol>";
+				$.each(res,function(i){
+					code += "<li>"+ res[i] + "</li>"	
+				})
+				code += "</ol>"
+				$('#result3').html(code)
+			},
+			error : function(aa){
+				alert("상태 : " + aa.status)
+			},
+			dataType : 'json'
+			
+		})
+		
+	})
+	
+	$('#btn4').on('click',function(){
+		$.ajax({
+			url : '../210125/jsonArr.jsp',
+			type : 'get',
+			sucess : function(res){
+				code = "";
+				$.each(res,function(i){
+					code += (i+1)+"번째 데이터 정보 <br>";
+					code += "이름 : " + res[i].name + "<br>";
+					code += "주소 : " + res[i].addr + "<br>";
+					code += "전화번호 : " + res[i].tel + "<br><br>";
+				})
+				
+				$('#result4').html(code)
+			},
+			error : function(aa){
+				alert("상태 : " + aa.status)
+			},
+			dataType : 'json'
+			
+		})
+		
+	})
+	
+	
+})
+
+</script>
+</head>
+<body>
+
+<pre>
+
+</pre>
+<input type="button" id="btn1" value="text">
+<input type="button" id="btn2" value="json">
+<input type="button" id="btn3" value="arr">
+<input type="button" id="btn4" value="jsonarr">
+<br>
+<div id="result1"></div>
+<div id="result2"></div>
+<div id="result3"></div>
+<div id="result4"></div>
+
+</body>
+</html>

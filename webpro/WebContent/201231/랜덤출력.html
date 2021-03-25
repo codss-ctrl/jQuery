@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>랜덤출력</title>
+<link rel = "stylesheet" href="../css/public.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	function proc1(kk){
+		kk.style.display = "none";
+		
+	
+	function proc1(){
+		//랜덤 발생
+		a = setInterval(function(){ 
+			var res = "";
+		for (i = 0; i < 5; i++) {
+				res += parseInt(Math.random()*45+1) + "&nbsp;&nbsp;";
+		}
+			
+			res += "<br>";
+			print(res);
+			console.log(a);
+		},1000);
+	}
+	}
+	function print(r){
+		document.getElementById('result1').innerHTML += r;		
+	}
+	function proc2(){
+		clearInterval(a);
+		
+		//시작버튼을 검색
+		bs=document.getElementById("btn1")
+		bs=document.getElementsByTagName('input')[0];
+		bs=document.querySelector('input');
+		bs=document.querySelector('#btn1');
+		
+		//시작버튼을 보이게 한다-display
+		bs.style.display = "inline"
+}
+</script>
+
+</head>
+<body>
+	<pre>
+		정해진 시간간격으로, 정해진 시간이 경과할 때마다 실행하기
+		setInterval(function(){}, 1000) // 1000ms=1s
+	</pre>
+	
+	<input type="button" value="시작" onclick= "proc1(this)"><br><br>
+	<input type="button" value="종료" onclick= "proc2()"><br>
+	<div id = "result1"></div>
+	
+
+</body>
+</html>

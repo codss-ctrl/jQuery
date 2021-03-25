@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+ul{
+	border-top: 3px solid red;
+	border-bottom: 3px solid red;
+	padding: 20px;
+}
+li{
+	display: inline;
+	/*none, inline, block, inline-block*/
+	margin: 10px;
+}
+a{
+	letter-spacing: 5px; /*자간*/
+	text-decoration: none; 
+	/* overline, line-through, underline, underline overline */
+}
+	img{
+	display: none;
+	}
+	
+</style>
+
+<script>
+ 
+	function show(a){
+		//img태그를 검색해서 ss배열변수에 저장
+		 //배열이란 연속된 공간으로 여러개를 확보
+		 
+	ss = document.getElementsByTagName('img');
+	if (ss != null) {
+// 		ss.style.display ="none";
+	/*
+	documentElementByTagName() : 
+	Returns a HTMLCollection containing all elements with the specified tag name
+	*/
+		for(k=0; k<ss.length; k++){
+		ss[k].style.display ="none";
+		}
+	}
+/*getElementById():
+Returns the element that has the ID attribute with the specified value */
+		if(a == 1){
+			a = document.getElementById('img1')
+		}else if(a == 2){
+			a = document.getElementById('img2')
+		}else if(a == 3){
+			a = document.getElementById('img3')
+		}else {
+			a = document.getElementById('img4')
+		}
+			a.style.display = "block";
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<pre>
+	script에서 html 요소 검색하기
+	
+	img 태그이름으로 검색
+	document.getElementsByTagName('img')[0]
+	
+	id 이름으로 검색
+	a = document.getElementById('img1')
+	
+	검색된 요소에 style 지정
+	a.style.display = "block"
+</pre>
+
+	<ul>
+<!-- 		<li><a href="../201217/아메리카노.html">아메리카노</a></li> -->
+<!-- 		<li><a href="../201217/카푸치노.html">카푸치노</a> </li> -->
+<!-- 		<li><a href="../201217/에스프레소.html">에스프레소 </a></li> -->
+<!-- 		<li><a href="../201217/카페라떼.html">카페라떼 </a></li> -->
+		
+		<li><a onclick="show(1)" href="#">아메리카노</a></li>
+		<li><a onclick="show(2)" href="#">카푸치노</a></li>
+		<li><a onclick="show(3)" href="#">에스프레소 </a></li>
+		<li><a onclick="show(4)" href="#">카페라떼 </a></li>
+	</ul>
+	
+	<div>
+		<img id="img1" src="../images/아메리카노.jpg" alt="">
+		<img id="img2" src="../images/카푸치노.jpg" alt="">
+		<img id="img3" src="../images/에스프레소.jpg" alt="">
+		<img id="img4" src="../images/카페라떼.jpg" alt="">
+	</div>
+	
+</body>
+</html>

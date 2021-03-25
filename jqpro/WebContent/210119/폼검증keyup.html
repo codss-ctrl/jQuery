@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼검증 keyup</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+	$('#name').on('keyup',function(){
+		namevalue = $('#name').val().trim();
+		
+// 		$(this).next().css('border', '2px solid red');
+		
+		
+		namereg = /^[가-힣]{2,10}$/
+		if (namereg.test(namevalue)) {
+			okpro(this)
+		}else{
+			nopro(this, "올바른 형식이 아닙니다.")
+		}
+		
+	})
+<!------------------>
+	$('#id').on('keyup',function(){
+		idval = $(this).val().trim()
+		
+		idreg = /^[a-z][a-zA-Z0-9]{3,11}$/;
+		
+		if(idreg.test(idval)){
+			okpro(this);
+		}else{
+			nopro(this, "올바른 형식이 아닙니다.")
+		}
+	})
+<!------------------->
+	$('#pass').on('keyup',function(){
+		passval = $(this).val().trim()
+		
+		passreg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~!@#$%^&*+`]).{8,15}$/;
+		
+		if(passreg.test(passval)){
+			okpro(this);
+		}else{
+			nopro(this, "올바른 형식이 아닙니다.")
+		}
+	})
+<!---------------->
+	$('#tel').on('keyup',function(){
+		telval = $(this).val().trim()
+		
+		telreg =  /\d{3}-\d{4}-\d{4}/ 
+		
+		if(telreg.test(telval)){
+			okpro(this);
+		}else{
+			nopro(this, "올바른 형식이 아닙니다.")
+		}
+	})
+<!----------------------->
+	$('#mail').on('keyup',function(){
+		mailval = $(this).val().trim()
+		
+		mailreg =  /^[a-zA-Z0-9]@[a-z0-9](\.[a-z]+){1,2}$/ ;
+		
+		if(mailreg.test(mailval)){
+			okpro(this);
+		}else{
+			nopro(this, "올바른 형식이 아닙니다.")
+		}
+	})
+<!------------------------>
+	
+	
+	function okpro(ele){
+// 		alert("성공")
+		$(ele).next().empty();
+		sp = $(ele).prev().find('span');
+		
+		$(sp).empty();
+		
+		$('<img>',{
+			'src' : '../images/check2.png',
+			'width' : '10px',
+			'height' : '10px'
+		}).appendTo(sp);
+		
+	}
+	function nopro(ele, text){
+// 		sp = "";
+		sp = $(ele).prev().find('span');
+		a= $(ele).next().html(text)
+		 $(sp).empty();
+			
+
+	} 
+	
+})
+</script>
+<style type="text/css">
+
+ div{
+ 	margin: 2px;
+ 	padding: 2px;
+ 	border: none; 
+ }
+ div.msg{
+ 	font-size : 12px;
+ 	color : red;
+ 	width : 50%;
+ 	height : auto;
+ 	overflow: auto;
+ }
+ label{
+ 	display : inline-block;
+ 	width : 100px;
+ 	height : 30px;
+ }
+ span{
+ 	display: inline-block;
+ 	width : 30px;
+ 	height : 100%;
+ 	
+ }
+</style>
+</head>
+<body>
+
+<pre>
+
+</pre>
+<form action="">
+	<label for="name">이름<span></span></label>	<input type="text" id="name">
+	<div class = "msg" id = "namemsg"></div>
+	
+	<label for="id">아이디<span></span></label>	<input type="text" id="id">
+	<div class = "msg" id = "idmsg"></div>
+	
+	<label for="pass"> 비밀번호<span></span></label><input type="text" id="pass">
+	<div class = "msg" id = "passmsg"></div>
+	
+	<label for="tel">전화번호<span></span></label>	<input type="text" id="tel">
+	<div class = "msg" id = "telmsg"></div>
+	
+	<label for="mail">이메일<span></span></label>	<input type="text" id="mail"> 
+	<div class = "msg" id = "mailmsg"></div>
+	
+	<input type="button" id="btn1" value="확인">
+</form>
+<br>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String객체</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script>
+str = "I Love Korea 대한 민국 만세 Korea 화이팅가";
+
+len = str.length; //proc1,proc2 실행 구분하기 위해 밖으로 뺌
+
+function proc1(){
+// 	len = str.length;
+
+	idx = prompt("인덱스를 입력하세요", "0~"+ (len-1));
+	code = str.charAt(idx);
+	
+	res = str + "<br>";
+	res += "charAt(" + idx + ") : " + code + "<br>";
+// 	res += `charAt(${idx}) : ${code} <br>`;
+	
+	print('result1');
+}
+function print(result){
+	document.getElementById(result).innerHTML = res; //textContent로 하면 <br>이 찍혀나옴
+}
+function proc2(){
+	
+	idx = prompt("인덱스를 입력하세요", "0~"+ (len-1));
+	
+	code = str.charCodeAt(idx);
+	
+	res = str + "<br>";
+	res += "charCodeAt(" + idx + ") : " + code + "<br>";
+	
+	print('result2');
+	
+}
+function proc3(){
+	
+	//입력한 name의 값을 가져온다.
+	namevalue = document.getElementById('name').value;
+	console.log(namevalue.length)
+	
+	nvalue = namevalue.trim();
+	console.log(nvalue.length);
+	
+	res = "공백제거전 : " + namevalue.length + " " + namevalue + "<br>";
+	res += "공백제거후 : " + nvalue.length + nvalue + "<br>";
+	print('result3');
+	
+// 	if(nvalue.length <= 0){
+// 		alert("데이터를 입력하세요.")
+// 	}else{
+// 		alert("데이터를 입력하셨습니다.")
+// 	}
+}
+function proc4(){
+	start = 0;
+	end = 7;
+	a1 = str.substring(start,end);
+	
+	res = "원래 문자열 : " + str + "<br>";
+	res += `substring(${start},${end}) : ${a1}<br>`;
+	
+	print('result4');
+}
+function proc5(){
+	start = 7;
+	end = 15;
+	a1 = str.slice(start,end);
+	
+	res = "원래 문자열 : " + str + "<br>";
+	res += `slice(${start},${end}) : ${a1} <br>`; 
+	
+	print('result5');
+	
+}
+function proc6(){
+	start = 3;
+	len = 4;
+	
+	a1 = str.substr(start,len);
+	res = "원래 문자열 : " + str + "<br>";
+	res += `substr(${start},${len}) : ${a1} <br>`; 
+	
+	print('result6');
+}
+function proc7(){
+	aa = str.split(" ");
+	
+	res = "원래 문자열 : " + str + "<br>";
+	res += "생성된 배열 : " + aa + "<br>";
+	print('result7');
+}
+function proc8(){
+	
+	avalue = document.getElementById('area').value;
+	//엔터 : \r\n
+	avalue = avalue.replace(/\r/g, "").replace(/\n/g,"<br>"); 
+	/*	//g-> 정규식(글로벌)	*/
+	console.log(avalue);
+	
+	res = avalue;
+	
+	
+	print('result8');
+}
+</script>
+<style type="text/css">
+.d8{
+	height : auto;
+}
+</style>
+</head>
+<body>
+
+<pre>
+ charAt(index) : 지정된 index 위치의 글자를 가져온다.
+ charCodeAt(index) : 지정된 index 위치의 유니코드 값을 가져온다.
+</pre>
+<input type="button" value="charAt" onclick="proc1()">
+<input type="button" value="charCodeAt" onclick="proc2()">
+<br>
+<div id="result1" class ="dd" ></div>
+<div id="result2" class ="dd" ></div>
+
+<pre>
+	trim() : 데이터 앞뒤의 무효의 공백을 제거한다.
+</pre>
+<input type="text" id = "name">
+<input type="button" value="trim" onclick="proc3()">
+<div id="result3" class ="dd" ></div>
+
+<pre>
+	substring(start,end) : start~end 사이의 값을 추출한다.
+	slice(start,end): start~end 사이의 값을 추출한다.
+	substr(start, length) : start부터 length개수만큼 추출한다.
+
+</pre>
+<input type="button" value="substring" onclick="proc4()">
+<input type="button" value="slice" onclick="proc5()">
+<input type="button" value="substr" onclick="proc6()">
+<div id="result4" class ="dd" ></div>
+<div id="result5" class ="dd" ></div>
+<div id="result6" class ="dd" ></div>
+
+<pre>
+	split("구분자",개수)  : 구분자를 기준으로 문자열을 분리하여 배열로 저장한다.
+</pre>
+<input type="button" value="split" onclick="proc7()">
+<br>
+<div id="result7" class ="dd" ></div>
+<br>
+<textarea rows="10" cols="50" id = "area"></textarea>
+<br>
+<input type="button" value="replace" onclick="proc8()">
+
+<div id="result8" class ="d8" ></div>
+</body>
+</html>

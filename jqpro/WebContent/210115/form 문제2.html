@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 문제2</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<style type="text/css">
+
+div{
+	height : 250px;
+	width : 400px
+
+}
+</style>
+<script>
+$(function(){
+	
+	$('#btn1').on('click',function(){
+		res="";
+		let hob="";
+		
+
+		if($(':checkbox:checked')){
+			$.each($(':checkbox:checked').function(i,a)({
+				hob += $(this).val() + ", ";
+			})
+		}else{
+				hob = "취미가 없으시군요";
+		}
+	
+		
+		name = $('#name').val();
+		gend = $('#gend:checked').val()
+//		hob += $('#hb:checked').val()
+		
+		res = `${name}씨!<br>`  
+		res += `당신은  ${gend}이고,<br>`
+		res += `취미는  ${hob}이군요!`
+		
+		$('#result1').html(res);
+	
+	})
+})
+
+</script>
+</head>
+<body>
+
+<pre>
+
+</pre>
+
+	이름 : <input type="text" id = "name" value="셈"><br><br>
+	성별 :<input type="radio" id="gend" name="gend" value="남자" checked >남자
+		 <input type="radio" id="gend" name="gend" value="여자"  >여자<br>
+		<br><br>
+	취미 :<input id="hb" type="checkbox" checked value="여행">여행
+		<input id="hb" type="checkbox" value="독서" >독서
+		<input id="hb" type="checkbox" checked value="영화감상"> 영화감상
+		<input id="hb" type="checkbox" value="바둑">바둑
+		<input id="hb" type="checkbox" value="장기">장기
+		<input id="hb" type="checkbox" checked value="등산">등산
+		<input id="hb" type="checkbox" value="낚시">낚시
+		<br><br>
+
+<input type="button" id="btn1" value="결과출력">
+<br>
+<div id="result1"></div>
+</body>
+</html>

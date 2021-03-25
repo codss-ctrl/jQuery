@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<link rel="stylesheet" href="../css/public.css">
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript">
+	function proc1(a){ //파라미터는 지역변수
+		
+		xvalue = document.querySelector("#ix").value; //or getElementById('ix') "20"
+		yvalue = document.querySelector("#iy").value; //value 안 주면 입력장소 의미 "10"
+	
+		xvalue = parseInt(xvalue); // 20
+		yvalue = parseInt(yvalue); // 10
+		
+		switch(a){
+		case "+" :
+			a = add(); //함수 호출
+			res = xvalue + "+" + yvalue + "="+ a;
+			break;
+		case "-" :
+			a = sub();
+			res = xvalue + "-" + yvalue + "="+ a;
+			break;
+		case "*" :
+			a = multi();
+			res = xvalue + "*" + yvalue + "="+ a;
+			break;
+		case "/" :	
+			a = divide();
+			res = xvalue + "/" + yvalue + "="+ a;
+			break;
+		}
+		//출력
+		result = document.getElementById('result1');
+		result.innerHTML = res;
+	}
+	
+	function proc2(a){
+		xvalue = document.getElementById('ix').value;
+		yvalue = document.getElementById('iy').value;
+		
+		xvalue = parseInt(xvalue);
+		yvalue = parseInt(yvalue);
+		
+		switch(a){
+		case "+" : 
+			x = add();
+			print(a);//"+" 로 넘겨줘도 됨
+			break;
+		case "-" :
+			x = sub();
+			print(a);
+			break;
+		case "*" :
+			x = multi();
+			print(a);
+			break;
+		case "/" :
+			x = divide();
+			print(a);
+			break;
+		}
+	}
+	function print(aa){
+// 		result1 = document.getElementById('result1');
+// 		result1.innerHTML = xvalue + aa + yvalue + "=" + x;
+		document.getElementById('result1').innerHTML = xvalue + aa + yvalue + "=" + x;
+	}
+	
+	function add(){
+		var plus = xvalue + yvalue;
+		return plus;
+	}
+	function sub(){
+		var sub = xvalue - yvalue;
+		return sub;
+	}
+	function multi(){
+		var multi = xvalue * yvalue;
+		return multi;
+	}
+	function divide(){
+		var divide = xvalue / yvalue;
+		return divide;
+	}
+	
+</script>
+	
+</head>
+<body>
+	
+	<pre>
+		input 태그에 입력한 값을 script에서 사용하기 위해서는 value 이용 
+		function print(a){
+			a를 이용해서 문장을 수헹한다.
+		}
+		print("정보값"); 
+			지역변수 일 때는 return 사용해서 a로 값 보냄
+		
+		function add(x,y){
+			xx = x + y;
+			return xx; => a = add();
+		}
+		
+		출력 문장 간단히
+	
+		value =sub();
+		aa + document.getElementById('aa')
+		aa.innerHTML = value
+		
+		1.변수에 저장해서 결과 출력
+		document.getElementById('aa').innerHTML = value;
+		
+		or
+		
+		2.바로 결과 출력
+		document.getElementById('aa').innerHTML = sub();
+	</pre>
+	
+		x : <input type="text" id="ix" value="10"><br>
+		y : <input type="text" id="iy" value="20"><br><br>
+		<input type="button" value="확인 +" onclick="proc1('+')">
+		<input type="button" value="확인 -" onclick="proc1('-')">
+		<input type="button" value="확인 *" onclick="proc1('*')">
+		<input type="button" value="확인 /" onclick="proc1('/')">
+		<br><br>
+		
+		<input type="button" value="확인 +" onclick="proc2('+')">
+		<input type="button" value="확인 -" onclick="proc2('-')">
+		<input type="button" value="확인 *" onclick="proc2('*')">
+		<input type="button" value="확인 /" onclick="proc2('/')">
+	<div id="result1"></div>
+	
+	
+	
+	
+	
+</body>
+</html>

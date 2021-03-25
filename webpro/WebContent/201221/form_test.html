@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 전송-get 방식</title>
+</head>
+<body>
+
+<div>
+
+<h1>form 전송-get 방식</h1>
+
+<form action="test.jsp" method="get">
+ 이름:<input type= "text" name="name"><br>  <!---input type= "text" 생략가능-->
+비밀번호<input type="password" name="pass"><br>
+ 전화번호:<input type="text" name="tel"><br>
+ 
+<input type="submit" value="전송">
+
+  </form>
+  </div>
+ 
+ 
+  
+<div>
+	
+<h1>form 전송-post 방식</h1>
+
+<form action="test.jsp" method="post">
+ 이름:<input type= "text" name="name"><br>  
+ 전화번호:<input type="text" name="tel"><br>
+ 비밀번호<input type="password" name="pass"><br>
+  <input type = "submit">
+  <input type = "reset" value="취소">
+  <input type = "button" value ="확인" onclick="alert'(Hello~~)'">
+  </form>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+

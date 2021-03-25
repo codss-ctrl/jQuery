@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jstest1</title>
+<script>
+	var x = "Hello"
+	alert(x);
+
+	function proc1() {
+//	이미 생성되어 있는 document를 다 지우고 새로운 document에 출력한다.
+//	document.write("Hello") //출력하기 위한 document 새로 만듦
+	
+	
+	//랜덤 색상 발생
+	var cr = parseInt(Math.random()*256);//정수로 변경
+	var cb = parseInt(Math.random()*256);
+	var cg = parseInt(Math.random()*256);
+	
+	var vdiv = document.getElementById('d1');
+//	vdiv.style.background = "rgb("+ cr + ","+ cg + "," + cb +")"
+	
+	
+	var vdiv2 = document.getElementsByTagName('div');
+	vdiv2[0].style.background = "rgb("+ cr + ","+ cg + "," + cb +")"	
+	}
+	
+	
+</script>
+
+<style type="text/css">
+	div{
+		height: 100px;
+		border: 1px solid blue;
+	}
+
+
+</style>
+
+<link rel="stylesheet" href="../css/public.css">
+
+</head>
+<body>
+<pre>
+	스크립트에서 document객체의 요소(body의 요소)로 접근하기 위해서
+	document.getElementById('id이름') 
+	document.getElementsByTagName('tag이름') : 배열을 리턴한다.
+	document.getElementsByName('name이름') : 배열을 리턴한다.
+	document.getElementsByClassName('class'이름) : 배열을 리턴한다.
+	
+	ECMA2016 ECMA6 - 스크립트의 표준 번호
+	document.querySelector() : 같은 이름으로 여러개의 요소가 있어도 첫번째 요소만 접근
+	document.querySelectorAll() : 같은 이름으로 되어있는 모든 요소에 접근, 배열을 리턴한다.
+</pre>
+	<button id="but1" class="bb" name="button1" type="button" onclick="proc1()">확인</button>  
+	<div id="d1"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

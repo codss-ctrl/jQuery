@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prop메소드.html</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+
+	
+// 3.0 이전 $('#btn1').bind('click',function(){})
+// 3.0 이후  $('#btn1').on('click',function(){})	
+	$('#btn1').on('click',function(){
+			
+		//각 항목의 상태값 얻어오기
+		chk = $('#checkTest').prop('checked');
+			
+		opt = $('#selTest option').eq(0).prop('selected');
+				
+		txt = $('#txtTest').prop('readonly');
+		
+		btn = $('#runBtn').prop('disabled')
+		
+		
+		
+// 		console.log(chk,chka);
+		
+		res = `체크 : ${chk}, 옵션.eq(0), 텍스트 : ${txt}, 버튼 : ${btn}`
+		
+		alert(res)
+		
+		})	
+
+	$('#btn2').on('click',function(){
+		//클릭할때마다 상태값을 변경한다
+		$('#checkTest').prop('checked',!$('#checkTest').prop('checked'))
+		
+		$('#selTest option').eq(0).prop('selected',!$('#selTest option').eq(0).prop('selected'))
+	
+		$('#txtTest').prop('readonly', !$('#txtTest').prop('readonly'))
+		
+		//가져오기
+		bb = $('#runBtn').prop('disabled');
+		
+		//설정하기
+		$('#runBtn').prop('disabled', !bb);
+		
+	})
+	
+	$('#checkall').on('change',function(){
+		
+		//checkall 의 상태 값 가져오기
+		aa = $(this).prop('checked');
+		//모든 check를 checkall 상태 값으로 설정하기
+			$('.check').prop('checked', aa)
+		
+		
+		
+	})
+	
+
+})
+
+</script>
+</head>
+<body>
+
+<pre>
+
+</pre>
+<input type="button" id="btn1" value="확인">
+<input type="button" id="btn2" value="변경">
+<br>
+<div id="result1">
+	<form>
+		체크박스(라디오버튼) :   
+		<input type="checkbox" id="checkTest"  checked><br><br>
+		
+		리스트박스(select객체) : 
+		 <select id="selTest">
+		     <option value="1">하나</option> 
+		     <option value="2">둘</option>
+		     <option value="3" selected >셋</option>
+		     <option value="4">넷</option>
+		 </select><br><br>
+		
+		 text객체(readonly) :
+		  <input type="text" value="가나다" id="txtTest" readonly="readonly"><br><br>
+		
+		 button객체(disabled) : 
+	       <input type="button" disabled onclick = "alert('Hello')" value="실행" id="runBtn" >
+
+
+	<br><br>
+	
+	
+	<input type="checkbox" id = "checkall" >전체선택
+	
+	<input type="checkbox" class = "check">1
+	<input type="checkbox" class = "check">2
+	<input type="checkbox" class = "check">3
+	<input type="checkbox" class = "check">4
+	<input type="checkbox" class = "check">5
+	<input type="checkbox" class = "check">6
+	
+	
+	</form>
+
+
+</div>
+</body>
+</html>

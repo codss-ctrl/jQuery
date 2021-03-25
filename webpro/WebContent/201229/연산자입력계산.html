@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연산자 입력계산</title>
+<link rel="stylesheet" href="../css/public.css">
+<style type="text/css">
+div{
+	height: 100px;
+	border: 1px solid blue;
+	margin : 20px;
+	padding : 20px;
+
+
+}
+</style>
+<script type="text/javascript">
+
+window.onload= function(){
+	
+	input1 = parseInt(prompt("정수 1 입력"));//v1 = parseInt(input1); 도 가능
+	
+	input2 = parseInt(prompt("정수 2 입력"));
+	
+	op = prompt("연산자를 입력하세요","+,-,*,/");
+	
+	//비교 - 연산자(op)
+	if(op=="+"){
+		res = input1+input2	;
+	}else if(op=="-"){
+		res = input1-input2	;
+	}else if(op=="*"){
+		res = input1*input2	;
+	}else if(op=="/"){
+		res = input1/input2	;
+	}
+	
+	//출력	
+	
+	result = document.getElementById('result')	;
+	
+	str = "입력 1: "+ input1 + "<br>";
+	str += "입력 2: "+ input2 + "<br>";
+	str += "연산자 : " + op + "<br>";
+	str += "결과 : " + res + "<br>";
+	
+	result.innerHTML = str;
+}	
+	
+</script>
+</head>
+<body>
+<pre>
+	1. 숫자 2개와 연산자 1개를 입력 받는다 - prompt를 입력한다.
+	2. 연산자의 종류에 따라서 연산이 이루어진다.
+	3. 연산 결과를 id가 result인 div 요소에 출력한다. - innerHTML, textContent
+	
+	window.onload = function(){
+		body태그의 요소들이 document객체로 생성되고 window에 로드되었을 때
+		script를 수행한다.
+	}
+	
+</pre>
+
+<div id="result"></div>
+
+</body>
+</html>

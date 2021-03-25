@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select객체</title>
+<link rel = "stylesheet" href="../css/public.css">
+<link rel="shortcut icon" type="image/x-icon" href="../images/aa.ico?1"/> 
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+	$('#data').focus();
+	$('#data').on('keyup',function(){
+		if(window.event.keyCode == 13){
+			proc();
+		}
+	})
+	
+	function proc(){
+		a = $('#data').val().trim();
+		if(a.length <1){
+			alert("입력하세요");
+			$('#data').focus();
+			return;
+		}
+		//option 만들기
+		//<option value = "1">1</option>
+		opt = $('<option></option>', {
+			'value' : a,
+			'text' : a
+			
+			
+		})
+		//왼쪽 select에 추가하기
+		opt.appendTo('#left');
+		
+		$('#data').val("");
+		$('#data').focus();
+	}
+	
+	$('#send').on('click',function(){
+		proc();
+	})
+	
+	$('#toRight').on('click',function(){
+		//왼쪽에서 선택 한 번째
+		a = document.getElementById('left').selectedIndex
+		//선택이 안된 상태
+		if(a<0){
+			alert("항목을 선택하세요");
+			return;
+		}
+		//왼쪽의 항목을 오른쪽으로 이동
+		$('#left option:selected').appendTo('#right');
+	})	
+	$('#toLeft').on('click',function(){
+		//오른쪽에서 선택 한 번째
+		b = document.getElementById('right').selectedIndex
+		//선택이 안된 상태
+		if(b<0){
+			alert("항목을 선택하세요");
+			return;
+		}
+		//오른쪽의 항목을 왼쪽으로 이동
+		$('#right option:selected').appendTo('#left');
+		
+	})
+
+	$('#leftAll').on('click',function(){
+		//오른쪽에 있는 항목을 왼쪽으로 이동
+		$('#right option').appendTo('#left')
+	})
+	$('#rightAll').on('click',function(){
+		//왼쪽의 모든 항목을 오른쪽으로 이동
+		$('#left option').appendTo('#right')
+	})
+	
+	//option에 대한 클릭이벤트
+	//option요소는 실행 후에 동적으로 생성된 요소 - delegate 방식
+	$('select').on('click','option', function(){
+// 		alert($(this)).text();
+		txt = $(this).text();
+		$('<p></p>',{
+				'text' : txt,
+				'id' : txt
+		}).appendTo('#result2')
+	})
+	
+	//	p클릭시 배경색 변경
+	$('#result2').on('click','p',function(){
+		$(this).css('background','pink');	
+	
+	})
+	
+})
+
+
+</script>
+<style type="text/css">
+table{
+	border : 1px dotted orange;
+	width : 100%;
+}
+td{
+	width : 200px;
+	height : 50px;
+	text-align: center;
+}
+.t1,.t3{
+	width : 30%;
+	height :500px;
+}
+.t2{
+	width : 20%;
+	height: 500px;
+}
+.t2 input{
+
+	font-size: 1.2em;
+}
+select {
+	width : 100%;
+	height : 100%;
+	border: none;
+	
+}
+</style>
+</head>
+<body>
+
+<pre>
+
+</pre>
+
+
+
+<br>
+<div id="result1">
+
+	<table border="1">
+		<tr>
+		<td colspan="3" style="font-weight: bold;font-size: 2.0em;">select 객체 예제</td>
+		</tr>
+		
+		<tr>
+		<td class="t1">
+			<select id="left" size="20">
+				
+			</select>
+		
+		</td>
+		<td class="t2">
+		<input type="button" id="toRight" value=">"><br><br>
+		<input type="button" id="rightAll" value=">>"><br><br>
+		<input type="button" id="toleft" value="<"><br><br>
+		<input type="button" id="leftAll" value="<<"><br><br>
+		
+		</td>
+		<td class="t3">
+		<select id="right" size="20">
+		
+		</td>
+		</select>
+		</tr>
+		
+		<tr>
+		<td colspan="3">
+		<input type="text" id = "data">
+		<input type="button" id="send" value="추가하기">
+		</td>
+		</tr>
+	
+	</table>
+
+</div>
+<div id = "result2"></div>
+</body>
+</html>

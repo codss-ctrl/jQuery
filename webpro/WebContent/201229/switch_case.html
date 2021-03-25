@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Switch_case</title>
+<link>
+
+<script type="text/javascript">
+	
+	window.onload = function(){
+		input1 = parseInt(prompt("정수 1 입력"));//v1 = parseInt(input1); 도 가능
+		input2 = parseInt(prompt("정수 2 입력"));
+		
+		op = prompt("연산자를 입력하세요","+,-,*,/");
+		
+		switch(op){
+		case "+" :
+			res = input1 + input2;
+			break;
+		case "-" :
+			res = input1 - input2;
+			break;
+		case "*" :
+			res = input1 * input2;
+			break;	
+		case "/" : 
+			res = input1 / input2;
+			break;	
+		}
+		//출력	
+		
+		result = document.getElementById('result')	;
+		
+		str = "입력 1: "+ input1 + "<br>";
+		str += "입력 2: "+ input2 + "<br>";
+		str += "연산자 : " + op + "<br>";
+		str += "결과 : " + res + "<br>";
+		
+		result.innerHTML = str;
+		
+	}
+	
+	
+	function grade() {
+		
+		score = prompt("점수를 입력하세요","0~100 사이");
+		
+		switch (parseInt(score/10)) {
+		case 10 : case 9 :
+			res = "A학점";
+			break;
+		case 8 :	
+			res = "B학점";
+			break;
+		case 7 :	
+			res = "C학점";
+			break;
+		case 6 :	
+			res = "D학점";
+			break;	
+		default : 	
+			res = "F학점";
+		}
+		
+	//출력	
+		result2 = document.getElementById('result2');
+		
+		str = "입력한 값: "+ score + "<br>";
+		str += "결과 : " + res ;
+		
+		result2.innerHTML = str;
+		
+	}
+</script>
+<style type="text/css">
+div{
+	height:	100px;
+	border: 1px solid blue;
+	padding: 20px;
+	margin: 20px;
+}
+
+</style>
+</head>
+<body>
+	<h1>연산자 비교</h1>
+	<p>두 개의 정수와 한 개의 연산자 입력</p>
+	<p>연산자 비교후 연산한다.</p>
+	<div id="result"></div>
+	
+	<hr>
+	
+	<h1>정수를 입력 (0~100)</h1>
+	<p>정수에 따라 학점A~F를 구한다.</p>
+	<input type="button" id="btn1" value="확인" onclick="grade()">
+	<div id="result2"></div>
+	
+
+
+
+
+</body>
+</html>
